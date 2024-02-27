@@ -1,0 +1,34 @@
+creamos una carpeta para el proyecto
+creamos una carpeta public en la raiz del proyecto
+dentro de la carpeta public colocamos el archivo index.html
+abrimos la terminal y ejecutamos npm init -y
+se genera en la raiz del proyecto el archivo package.json
+luego ejecutamos npm install -D tailwindcss
+despues ejecutamos npx tailwindcss init
+este ultimo comando me va a crear el archivo tailwind.config.js dentro del cual vamos a colocar este codigo personalizado
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+despues en la raiz del proyecto creamos una carpeta src 
+dentro de la carpeta src creamos un archivo styles.css y dentro de ese archivo colocamos este codigo:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+luego ejecutamos en la terminal el siguiente comando: npx tailwind init tailwind.js --full
+
+esto me va a generar un archivo tailwind.js en la raiz del proyecto
+luego ejecutamos npx tailwindcss-cli -i src/styles.css -o ./public/output.css
+
+esto me va a crear un archivo output.css que es el que usara mi proyecto y lo importare desde el index.html
+
+
+
